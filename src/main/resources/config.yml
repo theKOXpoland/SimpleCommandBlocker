@@ -1,0 +1,19 @@
+################### Permission message ###################
+permission_message: "&4&l[!] - &cYou don't have permission to use that!"
+################### Blocked commands ###################
+blocked_commands:
+  - '/me'
+  - '/;'
+  - '/rg'
+  - '/pl'
+  - '/chuj'
+  - '/?'
+  - '/plugins'
+  - '/minecraft:me'
+  - '/minecraft:help'
+  - '/minecraft:plugin'
+  - '/minecraft:version'
+  - '/ver'
+  - '/version'
+################### Colon blocker ###################
+blockcolon: true

@@ -1,0 +1,5 @@
+name: SimpleCommandBlocker
+version: 1.0
+main: mc.theKOXpoland.SimpleCommandBlocker.MainFile
+author: theKOXpoland
+api-version: 1.17
