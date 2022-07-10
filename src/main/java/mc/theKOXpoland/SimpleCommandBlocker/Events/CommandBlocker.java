@@ -21,7 +21,7 @@ public class CommandBlocker implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onCommand(PlayerCommandPreprocessEvent event) {
         Player player = event.getPlayer();
-        if (player.hasPermission("cmdblocker.access")) {
+        if (player.hasPermission(Objects.requireNonNull(plugin.getConfig().getString("bypass_permission")))) {
             return;
         }
         String command = event.getMessage();

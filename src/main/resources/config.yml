@@ -17,3 +17,5 @@ blocked_commands:
   - '/version'
 ################### Colon blocker ###################
 blockcolon: true
+################### Bypass Permission ###################
+bypass_permission: cmdblocker.bypass
