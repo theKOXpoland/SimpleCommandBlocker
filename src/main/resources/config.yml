@@ -18,4 +18,4 @@ blocked_commands:
 ################### Colon blocker ###################
 blockcolon: true
 ################### Bypass Permission ###################
-bypass_permission: cmdblocker.bypass
+bypass_permission: "cmdblocker.bypass"
