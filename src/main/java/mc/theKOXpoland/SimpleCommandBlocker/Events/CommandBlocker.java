@@ -30,14 +30,6 @@ public class CommandBlocker implements Listener {
 
         List<String> commandList = plugin.getConfig().getStringList("blocked_commands");
 
-        if (plugin.isReversed()) {
-            if (!commandList.contains(array[0])) {
-                player.sendMessage(Util.fix(Objects.requireNonNull(plugin.getConfig().getString("permission_message"))));
-                event.setCancelled(true);
-            }
-            return;
-        }
-
         if (plugin.isColonBlocked()) {
             if (command.contains(":")) {
                 if (player.hasPermission(Objects.requireNonNull(plugin.getConfig().getString("colon_permission")))) {
@@ -47,6 +39,14 @@ public class CommandBlocker implements Listener {
                 event.setCancelled(true);
                 return;
             }
+        }
+
+        if (plugin.isReversed()) {
+            if (!commandList.contains(array[0])) {
+                player.sendMessage(Util.fix(Objects.requireNonNull(plugin.getConfig().getString("permission_message"))));
+                event.setCancelled(true);
+            }
+            return;
         }
 
         if (commandList.contains(array[0])) {
