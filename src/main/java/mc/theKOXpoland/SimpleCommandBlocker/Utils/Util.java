@@ -7,4 +7,3 @@ public class Util {
         return ChatColor.translateAlternateColorCodes('&', text.replace("<<", "«").replace(">>", "»"));
     }
 }
-

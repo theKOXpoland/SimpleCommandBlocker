@@ -17,5 +17,11 @@ blocked_commands:
   - '/version'
 ################### Colon blocker ###################
 blockcolon: true
+#Block every command that cointains ":"
+colon_permission: "cmdblocker.colon"
+#Permission to allow usage of ":"
+################### Reverse blocker ###################
+reverseBlock: false
+#Reverses working of plugin, now ONLY commands from list are avaliable
 ################### Bypass Permission ###################
 bypass_permission: "cmdblocker.bypass"

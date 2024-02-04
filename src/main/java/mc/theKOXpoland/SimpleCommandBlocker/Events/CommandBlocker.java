@@ -24,20 +24,33 @@ public class CommandBlocker implements Listener {
         if (player.hasPermission(Objects.requireNonNull(plugin.getConfig().getString("bypass_permission")))) {
             return;
         }
+
         String command = event.getMessage();
         String[] array = command.split(" ");
 
-        List<String> allowed_commands = plugin.getConfig().getStringList("blocked_commands");
+        List<String> commandList = plugin.getConfig().getStringList("blocked_commands");
+
+        if (plugin.isReversed()) {
+            if (!commandList.contains(array[0]) || !commandList.contains(command)) {
+                player.sendMessage(Util.fix(Objects.requireNonNull(plugin.getConfig().getString("permission_message"))));
+                event.setCancelled(true);
+            }
+            return;
+        }
 
         if (plugin.isColonBlocked()) {
             if (command.contains(":")) {
+                if (player.hasPermission(Objects.requireNonNull(plugin.getConfig().getString("colon_permission")))) {
+                    return;
+                }
                 player.sendMessage(Util.fix(Objects.requireNonNull(plugin.getConfig().getString("permission_message"))));
                 event.setCancelled(true);
                 return;
             }
         }
 
-        if (allowed_commands.contains(array[0])) {
+        if (commandList.contains(array[0])) {
+            //If command contains comamnd from blocked list it will cancel it
             player.sendMessage(Util.fix(Objects.requireNonNull(plugin.getConfig().getString("permission_message"))));
             event.setCancelled(true);
         }
